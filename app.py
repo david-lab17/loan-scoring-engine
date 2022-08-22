@@ -64,20 +64,20 @@ def index():
 @app.route("/submit", methods=["GET", "POST"])
 def predict():
     if request.method == "POST":
-        stock1 = request.form['Monetary_Value']
-        stock2 = request.form['Frequency']
-        stock3 = request.form['Recency']
-        result = np.array([[stock1, stock2, stock3]])
+        transaction1 = request.form['Monetary_Value']
+        transaction2 = request.form['Frequency']
+        transaction3 = request.form['Recency']
+        result = np.array([[transaction1, transaction2, transaction3]])
         prediction = model.predict(result)
         # prediction = model.predict(result)
 
         if prediction == 0:
-            display = "Stocks belongs to Group 1"
+            display = "Transaction belongs to Group 1"
         elif prediction == 1:
-            display = "Stocks belongs to Group 2"
+            display = "Transaction belongs to Group 2"
        
         else:
-            display = "Stocks belongs to Group 3"
+            display = "Transaction belongs to Group 3"
 
     return render_template("submit.html", n=display)
 
