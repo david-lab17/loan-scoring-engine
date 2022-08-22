@@ -10,19 +10,14 @@ X = np.array(data)
 # System constants
 number_of_clusters = 3
 
-# Apply KMEans to the Data
-# kmeans = KMeans(
-# 	n_clusters=number_of_clusters,
-# 	random_state=1
-# 	)
+
 k_means = KMeans(n_clusters=3,random_state=0,init='k-means++')
 k_means.fit(X)
 y_kmeans = k_means.fit_predict(X)
 labels = k_means.labels_
 
 # kfit = k_means.fit(X)
-
-
+freeze_centroids = k_means.cluster_centers_
 filename = 'freezed_centroids.pkl'
 pickle.dump(k_means, open(filename, 'wb'))
 
