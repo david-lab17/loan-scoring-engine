@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thur Jul 28 2021
+Created on Thur Jul 28 2022
 
 @author: DM Charo
 """
@@ -30,7 +30,7 @@ def predict():
         transaction2 = request.form['Frequency']
         transaction3 = request.form['Recency']
         result = np.array([[transaction1, transaction2, transaction3]])
-        kmeans=KMeans(n_clusters=3, random_state=0, init='k-means++')
+        # kmeans=KMeans(n_clusters=3, random_state=0, init='k-means++')
         # kmeans.fit(result)
         # prediction = kmeans.predict(result)
         # prediction = KMeans(n_clusters=3, random_state=0, init='k-means++').fit_predict(result)
