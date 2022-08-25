@@ -66,7 +66,7 @@ def index():
     
 # prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1,3)
+    to_predict = np.array(to_predict_list).reshape(1,4)
     loaded_model = pickle.load(open('freezed_centroids1.pkl',"rb")) # load the model
     result = loaded_model.predict(to_predict) # predict the values using loded model
     return result[0]
